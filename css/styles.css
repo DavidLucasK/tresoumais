@@ -1,0 +1,19 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  color: #fff;
+  list-style: none;
+  text-decoration: none;
+}
+
+.pageMain {
+  width: 100vw;
+  height: 100vh;
+  background-color: #3f3f3f;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
