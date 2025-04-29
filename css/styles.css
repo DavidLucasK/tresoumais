@@ -10,7 +10,7 @@ body {
   background: linear-gradient(135deg, #000000, #000000);
   color: #fff;
   font-family: "Poppins", sans-serif;
-  height: 100vh;
+  height: 100dvh;
   position: relative;
   overflow: hidden;
 }
@@ -19,7 +19,7 @@ body {
 .pageMain {
   display: grid;
   grid-template-rows: auto 1fr auto;
-  height: 100vh;
+  height: 100dvh;
   width: 100vw;
   align-items: center;
   justify-items: center;
