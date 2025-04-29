@@ -10,37 +10,22 @@ body {
   background: linear-gradient(135deg, #000000, #000000);
   color: #fff;
   font-family: "Poppins", sans-serif;
-  min-height: 100vh;
+  height: 100vh;
   position: relative;
-}
-
-/* Navbar */
-nav {
-  position: fixed;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 10;
-}
-
-.logo {
-  width: clamp(120px, 20vw, 250px);
-  max-width: 200px;
-  display: block;
-  margin: 0 auto;
-  padding: 1.5rem 0;
-  cursor: pointer;
+  overflow: hidden;
 }
 
 /* Container principal */
 .pageMain {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
   height: 100vh;
   width: 100vw;
+  align-items: center;
+  justify-items: center;
   gap: 1rem;
-  position: relative;
+  padding: 1rem;
+  box-sizing: border-box;
   background: linear-gradient(180deg, #000000 0%, #0a0a0a 100%);
   background-image: repeating-linear-gradient(
       135deg,
@@ -55,6 +40,20 @@ nav {
       rgba(255, 255, 255, 0.015) 51px
     );
   background-blend-mode: overlay;
+}
+
+.logo {
+  width: clamp(120px, 20vw, 200px);
+  max-width: 80vw;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+}
+
+.logo:hover {
+  opacity: 0.8;
 }
 
 /* Card de redes sociais */
