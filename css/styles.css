@@ -1,32 +1,125 @@
+/* Reset básico */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  scroll-behavior: smooth;
+}
+
+/* Fundo */
+body {
+  background: linear-gradient(135deg, #000000, #000000);
   color: #fff;
-  list-style: none;
-  text-decoration: none;
-  background-color: #3f3f3f;
+  font-family: "Poppins", sans-serif;
+  min-height: 100vh;
+  position: relative;
 }
 
+/* Navbar */
 nav {
-  width: 100%;
-  top: 0;
   position: fixed;
-  height: 100px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
 }
 
-nav .logo {
-  width: 100%;
-  max-width: 120px;
+.logo {
+  min-width: 250px;
+  width: clamp(100px, 20vw, 250px);
+  padding: 2rem 0;
+  cursor: pointer;
 }
 
+/* Container principal */
 .pageMain {
-  width: 100vw;
-  height: 100vh;
-  background-color: #3f3f3f;
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100vw;
+  position: relative;
+  background: linear-gradient(180deg, #000000 0%, #0a0a0a 100%);
+  background-image: repeating-linear-gradient(
+      135deg,
+      transparent,
+      transparent 50px,
+      rgba(255, 255, 255, 0.015) 51px
+    ),
+    repeating-linear-gradient(
+      225deg,
+      transparent,
+      transparent 50px,
+      rgba(255, 255, 255, 0.015) 51px
+    );
+  background-blend-mode: overlay;
+}
+
+/* Card de redes sociais */
+.card {
+  background: linear-gradient(to right, transparent, #00000096);
+  padding: 40px 30px;
+  border-radius: 15px;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.05);
   text-align: center;
+  width: 100%;
+  max-width: 300px;
+}
+
+/* Links */
+.linksContainer {
+  list-style: none;
+}
+
+.linksContainer li {
+  margin: 20px 0;
+}
+
+.linksContainer a {
+  text-decoration: none;
+  color: #fff;
+  background-color: #222;
+  padding: 16px 20px;
+  border-radius: 8px;
+  display: inline-block;
+  width: 100%;
+  transition: 0.3s;
+  font-weight: bold;
+}
+
+.linksContainer a:hover {
+  background-color: #444;
+  transform: scale(1.05);
+}
+
+/* ----------------- RESPONSIVO ----------------- */
+
+/* Telas pequenas: até 480px */
+@media (max-width: 480px) {
+  .card {
+    max-width: 260px;
+    padding: 30px 20px;
+  }
+
+  .logo {
+    min-width: 220px;
+    padding: 5rem 0;
+  }
+}
+
+/* Telas médias: de 481px até 768px */
+@media (min-width: 481px) and (max-width: 768px) {
+  .card {
+    max-width: 280px;
+  }
+
+  .logo {
+    min-width: 220px;
+    padding: 5rem 0;
+  }
+}
+
+/* Telas grandes: 769px para cima */
+@media (min-width: 769px) {
+  .card {
+    max-width: 300px;
+  }
 }
