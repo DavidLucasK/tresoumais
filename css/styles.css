@@ -55,13 +55,47 @@ nav {
 
 /* Card de redes sociais */
 .card {
-  background: linear-gradient(to right, transparent, #00000096);
+  position: relative;
+  background: #131313;
   padding: 40px 30px;
   border-radius: 15px;
   box-shadow: 0 0 15px rgba(255, 255, 255, 0.05);
   text-align: center;
   width: 100%;
   max-width: 300px;
+}
+
+@property --angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+
+.card::after,
+.card::before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-image: conic-gradient(
+    from var(--angle),
+    rgb(255, 153, 0),
+    rgb(0, 153, 255),
+    rgb(255, 0, 140),
+    rgb(255, 153, 0)
+  );
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  z-index: -1;
+  padding: 2px;
+  border-radius: 15px;
+  animation: 3s spin linear infinite;
+}
+
+.card::before {
+  filter: blur(1.5rem);
+  opacity: 0.5;
 }
 
 /* Links */
@@ -119,6 +153,15 @@ footer {
 
 .footerContainer img:hover {
   opacity: 1;
+}
+
+@keyframes spin {
+  from {
+    --angle: 0deg;
+  }
+  to {
+    --angle: 360deg;
+  }
 }
 
 /* ----------------- RESPONSIVO ----------------- */
