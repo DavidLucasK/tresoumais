@@ -19,7 +19,7 @@ body {
 .pageMain {
   display: grid;
   grid-template-rows: auto 1fr auto;
-  height: 100dvh;
+  height: 90dvh;
   width: 100vw;
   align-items: center;
   justify-items: center;
@@ -31,13 +31,13 @@ body {
       135deg,
       transparent,
       transparent 50px,
-      rgba(255, 255, 255, 0.015) 51px
+      rgba(255, 255, 255, 0.025) 51px
     ),
     repeating-linear-gradient(
       225deg,
       transparent,
       transparent 50px,
-      rgba(255, 255, 255, 0.015) 51px
+      rgba(255, 255, 255, 0.045) 51px
     );
   background-blend-mode: overlay;
 }
@@ -54,6 +54,14 @@ body {
 
 .logo:hover {
   opacity: 0.8;
+}
+
+.mainTitle {
+  font-size: clamp(1.5rem, 4vw, 2.5rem);
+  font-weight: 600;
+  color: white;
+  text-align: center;
+  line-height: 1.2;
 }
 
 /* Card de redes sociais */
@@ -137,14 +145,6 @@ body {
 .linksContainer a:hover {
   background-color: #444;
   transform: scale(1.05);
-}
-
-footer {
-  position: absolute;
-  bottom: 10px; /* ou o espaço que você quiser do final da tela */
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 5;
 }
 
 .footerContainer img {
